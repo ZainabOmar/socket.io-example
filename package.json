@@ -1,0 +1,21 @@
+{
+	"name": "Chat-app",
+	"version": "0.0.0",
+	"license": "MIT",
+
+	"scripts": {
+		"start": "nodemon server.js"
+	},
+
+	"description": "Building chat app using socket.io",
+	"private": true,
+
+	"dependencies": {
+		"express": "^4.15.1",
+		"socket": "^1.7.3",
+		"socket.io-client": "^1.7.3",
+		"mongodb": "^2.2.22",
+		"mongoose": "^4.8.6",
+		"body-parser": "*"
+	}
+}
