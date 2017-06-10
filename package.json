@@ -13,6 +13,11 @@
     "mongodb": "^2.2.28",
     "mongoose": "^4.10.5",
     "nodemon": "^1.11.0",
-    "socket.io": "^2.0.2"
+    "socket.io": "^2.0.2",
+    "bcrypt": "*",
+    "bcrypt-nodejs": "0.0.3",
+    "jsonwebtoken": "*",
+    "jwt-simple": "^0.5.1",
+    "q": "^1.4.1"
   }
 }
