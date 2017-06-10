@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>socket-example</title>
+</head>
+<body ng-app= "chat-app">
+
+	<h1><center>Hello World</center></h1>
+	<input type="text" name="userName">
+	<script src="/socket.io/socket.io.js"></script>
+	<script>
+		var socket = io();
+	</script>
+	<ng-view></ng-view>
+	<script src="assets/js/jquery.js"></script>
+	<script src="assets/js/jquery.js"></script>
+	<script src="assets/js/bootstrap.js"></script>
+	<script src="lib/angular/angular.js"></script>
+	<script src="lib/angular-route/angular-route.js"></script> 
+	<script src="app/services.js"></script>
+	<script src="app/main/main.js"></script>
+	<script src="app/app.js"></script>
+</body>
+</html>

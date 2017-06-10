@@ -1,6 +1,9 @@
-var app = require ("express")();
+var express = require ("express");
+var app = express();
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+
+var UserController = require ('./userController');
 
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
@@ -19,9 +22,7 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/chat-app');
 var db = mongoose.connection;
 console.log("mongodb is now connected to the serever");
 
-app.get('/', function(req, res){
-	res.sendFile(__dirname + '/index.html');
-});
+app.use(express.static(__dirname + '/../client'));
 
 http.listen(process.env.PORT || 3000);
 console.log("app is listening on port 3000");
