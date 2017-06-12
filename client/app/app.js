@@ -2,7 +2,6 @@ angular.module('chatApp', [
   'chatApp.services',
   'chatApp.profile',
   'chatApp.auth',
-  'chatApp.main',
   'ngRoute'
 ])
 .config(function ($routeProvider, $httpProvider) {
@@ -22,10 +21,6 @@ angular.module('chatApp', [
     .when('/users/:user', {
       templateUrl: 'app/profile/profile.html',
       controller: 'ProfileController'
-    })
-    .when('/', {
-      templateUrl: 'app/main/main.html',
-      controller: 'MainController'
     })
     .otherwise({redirectTo:'/'});
 

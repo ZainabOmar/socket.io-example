@@ -9,18 +9,22 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
 io.on('connection', function(socket){
-	console.log('a user connected');
+	console.log('a user is connected');
 	socket.on('disconnect', function() {
-		console.log('user is disconnected now')
+		console.log('the user is disconnected now')
 	});
 });
 
 app.use(bodyParser.json());
 
 // Connect to Mongoose
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/chat-app');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/chatapp');
 var db = mongoose.connection;
 console.log("mongodb is now connected to the serever");
+
+app.post('/api/signin', UserController.handleUsers.signin);
+app.post('/api/signup', UserController.handleUsers.signup);
+app.get('/api/allUsers', UserController.handleUsers.getUsers);
 
 app.use(express.static(__dirname + '/../client'));
 

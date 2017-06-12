@@ -26,7 +26,7 @@ angular.module('chatApp.services', [])
   // it is responsible for authenticating our user
   // by exchanging the user's username and password
   // for a JWT from the server
-  // that JWT is then stored in localStorage as 'com.shortly'
+  // that JWT is then stored in localStorage as 'com.chatApp'
   // after you signin/signup open devtools, click resources,
   // then localStorage and you'll see your token from the server
   var signin = function (user) {

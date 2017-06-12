@@ -17,7 +17,8 @@ module.exports.handleUsers = {
         .then(function (isMatch) {
           if (isMatch) {
             var token = jwt.encode(user, 'secret');
-            res.json({token : token, userid : user._id,username:username });
+            user.password = "";
+            res.json({token: token, userInfo: user });
           } else {
             res.json("password not matched")
           }
@@ -46,15 +47,14 @@ module.exports.handleUsers = {
                 res.json(err);
               } else {
                 var token = jwt.encode(user, 'secret');
-
-                res.json({token : token , username : username}); 
+                newUser.password = "";
+                res.json({token: token, userInfo: newUser}); 
               }     
            });
         }
     });
 },
 
-  // get user in data base
   getUsers: function(req, res) {
     User.find({}, function(err, users){
       if(err){
